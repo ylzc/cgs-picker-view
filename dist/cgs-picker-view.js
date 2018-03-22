@@ -97,7 +97,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-__WEBPACK_IMPORTED_MODULE_0_angular___default.a.module("cgs-picker-view", []).directive("pickerView", function () {
+/**
+ * @ngdoc module
+ * @name  cgs-picker-view
+ */
+
+__WEBPACK_IMPORTED_MODULE_0_angular___default.a.module("cgs-picker-view", [])
+/**
+ * @ngdoc directive
+ * @name pickerView
+ * @module cgs-picker-view
+ * @restrict E
+ * @scope { options:"=" , datas:"="}
+ * @link
+    */
+.directive("pickerView", function () {
   return {
     restrict: "A",
     require: 'ngModel',
@@ -106,7 +120,6 @@ __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module("cgs-picker-view", []).di
       datas: "="
     },
     link: function link($scope, $element, $attrs, $ngModelCtrl) {
-      console.log($element);
       $element.bind("click", function () {
         var pickerView = new PickerView({
           bindElem: $element[0],
